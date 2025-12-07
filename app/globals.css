@@ -8,14 +8,14 @@
   box-sizing: border-box;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Esconde el Scroll de Chrome, Safari y Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Esconde el Scroll de IE, Edge y Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
+  -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
 }
 .glassmorphism {

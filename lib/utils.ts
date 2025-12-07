@@ -10,31 +10,31 @@ export function cn(...inputs: ClassValue[]) {
 // FORMAT DATE TIME
 export const formatDateTime = (dateString: Date) => {
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
-    weekday: "short", // abbreviated weekday name (e.g., 'Mon')
-    month: "short", // abbreviated month name (e.g., 'Oct')
-    day: "numeric", // numeric day of the month (e.g., '25')
-    hour: "numeric", // numeric hour (e.g., '8')
-    minute: "numeric", // numeric minute (e.g., '30')
-    hour12: true, // use 12-hour clock (true) or 24-hour clock (false)
+    weekday: "short", // Nombre del día abreviado (e.g., 'Mon')
+    month: "short", // Nombre del mes abreviado (e.g., 'Oct')
+    day: "numeric", // Día del mes númerico (e.g., '25')
+    hour: "numeric", // Hora númerica (e.g., '8')
+    minute: "numeric", // Minuto númerico (e.g., '30')
+    hour12: true, // Usa un reloj de 12 horas (true) o de 24 horas (false)
   };
 
   const dateDayOptions: Intl.DateTimeFormatOptions = {
-    weekday: "short", // abbreviated weekday name (e.g., 'Mon')
-    year: "numeric", // numeric year (e.g., '2023')
-    month: "2-digit", // abbreviated month name (e.g., 'Oct')
-    day: "2-digit", // numeric day of the month (e.g., '25')
+    weekday: "short", // Nombre del día abreviado (e.g., 'Mon')
+    year: "numeric", // Año númerico (e.g., '2023')
+    month: "2-digit", // Nombre del mes abreviado (e.g., 'Oct')
+    day: "2-digit", // Día númerico del mes (e.g., '25')
   };
 
   const dateOptions: Intl.DateTimeFormatOptions = {
-    month: "short", // abbreviated month name (e.g., 'Oct')
-    year: "numeric", // numeric year (e.g., '2023')
-    day: "numeric", // numeric day of the month (e.g., '25')
+    month: "short", // Nombre del mes abreviado (e.g., 'Oct')
+    year: "numeric", // Año númerico (e.g., '2023')
+    day: "numeric", // Día del mes númerico (e.g., '25')
   };
 
   const timeOptions: Intl.DateTimeFormatOptions = {
-    hour: "numeric", // numeric hour (e.g., '8')
-    minute: "numeric", // numeric minute (e.g., '30')
-    hour12: true, // use 12-hour clock (true) or 24-hour clock (false)
+    hour: "numeric", // Hora númerica (e.g., '8')
+    minute: "numeric", // Minuto númerico (e.g., '30')
+    hour12: true, // Usa un reloj de 12 horas (true) o de 24 horas (false)
   };
 
   const formattedDateTime: string = new Date(dateString).toLocaleString(
@@ -135,25 +135,24 @@ export function countTransactionCategories(
   const categoryCounts: { [category: string]: number } = {};
   let totalCount = 0;
 
-  // Iterate over each transaction
+  // Itera sobre cada transacción
   transactions &&
     transactions.forEach((transaction) => {
-      // Extract the category from the transaction
+      // Extrae la categoria de la transacción
       const category = transaction.category;
 
-      // If the category exists in the categoryCounts object, increment its count
+      // Si la categoria existe categoryCounts, incrementa la cuenta
       if (categoryCounts.hasOwnProperty(category)) {
         categoryCounts[category]++;
       } else {
-        // Otherwise, initialize the count to 1
+        // Inicializa la cuenta en 1
         categoryCounts[category] = 1;
       }
 
-      // Increment total count
       totalCount++;
     });
 
-  // Convert the categoryCounts object to an array of objects
+  // Convierte categoryCounts en un array de objetos
   const aggregatedCategories: CategoryCount[] = Object.keys(categoryCounts).map(
     (category) => ({
       name: category,
@@ -162,17 +161,17 @@ export function countTransactionCategories(
     })
   );
 
-  // Sort the aggregatedCategories array by count in descending order
+  // Ordena aggregatedCategories en orden descendiente
   aggregatedCategories.sort((a, b) => b.count - a.count);
 
   return aggregatedCategories;
 }
 
 export function extractCustomerIdFromUrl(url: string) {
-  // Split the URL string by '/'
+  // Split la string de la URL con '/'
   const parts = url.split("/");
 
-  // Extract the last part, which represents the customer ID
+  // Extrae la última parte, que representa la ID del cliente
   const customerId = parts[parts.length - 1];
 
   return customerId;
