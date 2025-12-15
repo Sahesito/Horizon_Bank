@@ -1,7 +1,9 @@
 /* eslint-disable no-prototype-builtins */
 import { type ClassValue, clsx } from "clsx";
+import { SocketAddress } from "net";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
+import z from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -190,5 +192,45 @@ export const getTransactionStatus = (date: Date) => {
   const twoDaysAgo = new Date(today);
   twoDaysAgo.setDate(today.getDate() - 2);
 
-  return date > twoDaysAgo ? "Processing" : "Success";
+  return date > twoDaysAgo ? "Procesando" : "Éxito";
 };
+
+export const authFormSchema = (type: string) => z.object({
+
+    //Inicio de sesión
+    email: z.string().email(),
+    password: z.string().min(8),
+    
+    // Registro
+firstName: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio"),
+    
+    lastName: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio"),
+    
+    address1: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio").max(50, "Demasiado largo"),
+    
+    state: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(2, "Obligatorio").max(2, "Deben ser 2 caracteres"),
+    
+    postalCode: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(3, "Obligatorio").max(6, "Demasiado largo"),
+    
+    dateOfBirth: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio"),
+    
+    ssn: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio").max(4, "Demasiado largo"),
+    
+    city: type === 'sign-in' 
+        ? z.string().optional() 
+        : z.string().min(1, "Obligatorio").max(50, "Demasiado largo"),  
+})
