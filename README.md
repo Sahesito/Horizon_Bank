@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🤖 Introducción
 
-## Getting Started
+Construido con Next.js, Horizon es una plataforma SaaS financiera que se conecta a múltiples cuentas bancarias, muestra transacciones en tiempo real, permite transferir dinero a otros usuarios de la plataforma y ayuda a gestionar las finanzas desde un solo lugar.
 
-First, run the development server:
+Si estás comenzando y necesitas ayuda o encuentras algún bug, puedes unirte a nuestra comunidad activa en Discord con más de 34,000 miembros, donde la gente se apoya mutuamente.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ⚙️ Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js
+- TypeScript
+- Appwrite
+- Plaid
+- Dwolla
+- React Hook Form
+- Zod
+- TailwindCSS
+- Chart.js
+- ShadCN
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔋 Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+👉 Autenticación: Autenticación SSR ultra segura con validaciones y autorización adecuadas.
 
-## Learn More
+👉 Conexión Bancaria: Integración con Plaid para enlazar múltiples cuentas bancarias.
 
-To learn more about Next.js, take a look at the following resources:
+👉 Página Principal: Vista general de la cuenta del usuario con el balance total de todos los bancos conectados, transacciones recientes, gasto por categorías, etc.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👉 Mis Bancos: Lista completa de todos los bancos conectados con sus respectivos saldos y detalles de cuenta.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+👉 Historial de Transacciones: Incluye paginación y filtros para visualizar transacciones de distintos bancos.
 
-## Deploy on Vercel
+👉 Actualizaciones en Tiempo Real: Los cambios se reflejan automáticamente en todas las páginas relevantes al conectar nuevas cuentas bancarias.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👉 Transferencia de Fondos: Permite transferir dinero usando Dwolla a otras cuentas, solicitando los campos necesarios y el ID bancario del destinatario.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👉 Diseño Responsivo: La aplicación se adapta perfectamente a distintos tamaños de pantalla y dispositivos (desktop, tablet y móvil), garantizando una experiencia consistente.
+
+👉 Mucho más: Arquitectura de código limpia, reutilización de componentes y buenas prácticas.
