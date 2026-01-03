@@ -3,15 +3,7 @@
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
-
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, } from "@/components/ui/select";
 import { formUrlQuery, formatAmount } from "@/lib/utils";
 
 export const BankDropdown = ({
@@ -61,7 +53,7 @@ export const BankDropdown = ({
             >
                 <SelectGroup>
                     <SelectLabel className="py-2 font-normal text-gray-500">
-                        Select a bank to display
+                        Seleccione un banco
                     </SelectLabel>
                     {accounts.map((account: Account) => (
                         <SelectItem

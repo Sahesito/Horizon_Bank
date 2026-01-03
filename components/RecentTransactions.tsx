@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BankTabItem } from './BankTabItem'
 import BankInfo from './BankInfo'
+import TransactionsTable from './TransactionsTable'
 
 const RecentTransactions = ({
     accounts,
@@ -14,10 +15,10 @@ const RecentTransactions = ({
         <section className="recent-transactions">
             <header className="flex items-center justify-between">
                 <h2 className="recent-transactions-label">
-                    Recent transactions
+                    Tranferencias Recientes
                 </h2>
                 <Link href={`/transaction-history/?id=${appwriteItemId}`} className="view-all-btn">
-                    View All
+                    Ver todo
                 </Link>
             </header>
 
@@ -45,6 +46,7 @@ const RecentTransactions = ({
                             appwriteItemId={appwriteItemId}
                             type="full"
                         />
+
                     </TabsContent>
                 ))}
             </Tabs>

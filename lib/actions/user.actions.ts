@@ -66,14 +66,14 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
             `${firstName} ${lastName}`
         );
 
-        if (!newUserAccount) throw new Error('Error creating user')
+        if (!newUserAccount) throw new Error('Error creando usuario')
 
         const dwollaCustomerUrl = await createDwollaCustomer({
             ...userData,
             type: 'personal'
         })
 
-        if (!dwollaCustomerUrl) throw new Error('Error creating Dwolla customer')
+        if (!dwollaCustomerUrl) throw new Error('Error creando Dwolla usuario')
 
         const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl);
 
@@ -238,7 +238,7 @@ export const exchangePublicToken = async ({
             publicTokenExchange: "complete",
         });
     } catch (error) {
-        console.error("An error occurred while creating exchanging token:", error);
+        console.error("Se produjo un error al crear el token de intercambio:", error);
     }
 }
 

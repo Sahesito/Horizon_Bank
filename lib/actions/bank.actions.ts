@@ -1,13 +1,6 @@
 "use server";
 
-import {
-    ACHClass,
-    CountryCode,
-    TransferAuthorizationCreateRequest,
-    TransferCreateRequest,
-    TransferNetwork,
-    TransferType,
-} from "plaid";
+import {ACHClass, CountryCode, TransferAuthorizationCreateRequest, TransferCreateRequest, TransferNetwork, TransferType, } from "plaid";
 import { plaidClient } from "../plaid";
 import { parseStringify } from "../utils";
 import { getTransactionsByBankId } from "./transaction.actions";
@@ -57,7 +50,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
 
         return parseStringify({ data: accounts, totalBanks, totalCurrentBalance });
     } catch (error) {
-        console.error("An error occurred while getting the accounts:", error);
+        console.error("Se produjo un error al obtener las cuentas:", error);
     }
 };
 
@@ -120,7 +113,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
             transactions: allTransactions,
         });
     } catch (error) {
-        console.error("An error occurred while getting the account:", error);
+        console.error("Se produjo un error al obtener la cuenta:", error);
     }
 };
 
@@ -137,7 +130,7 @@ export const getInstitution = async ({
 
         return parseStringify(intitution);
     } catch (error) {
-        console.error("An error occurred while getting the accounts:", error);
+        console.error("Se produjo un error al obtener las cuentas:", error);
     }
 };
 
@@ -173,6 +166,6 @@ export const getTransactions = async ({
 
         return parseStringify(transactions);
     } catch (error) {
-        console.error("An error occurred while getting the accounts:", error);
+        console.error("Se produjo un error al obtener las cuentas:", error);
     }
 };

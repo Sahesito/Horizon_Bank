@@ -2,7 +2,6 @@ import HeaderBox from '@/components/HeaderBox'
 import PaymentTransferForm from '@/components/PaymentTransferForm'
 import { getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
-import React from 'react'
 
 const Transfer = async () => {
     const loggedIn = await getLoggedInUser();
@@ -17,8 +16,8 @@ const Transfer = async () => {
     return (
         <section className="payment-transfer">
             <HeaderBox
-                title="Payment Transfer"
-                subtext="Please provide any specific details or notes related to the payment transfer"
+                title="Transferencias"
+                subtext="Proporcione detalles o notas específicas relacionadas con la transferencia de pago."
             />
 
             <section className="size-full pt-5">

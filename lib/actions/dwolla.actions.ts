@@ -12,7 +12,7 @@ const getEnvironment = (): "production" | "sandbox" => {
             return "production";
         default:
             throw new Error(
-                "Dwolla environment should either be set to `sandbox` or `production`"
+                "El entorno de Dwolla debe configurarse como `sandbox` o `producción`"
             );
     }
 };
@@ -35,7 +35,7 @@ export const createFundingSource = async (
             })
             .then((res) => res.headers.get("location"));
     } catch (err) {
-        console.error("Creating a Funding Source Failed: ", err);
+        console.error("Error al crear una fuente de financiación: ", err);
     }
 };
 
@@ -47,7 +47,7 @@ export const createOnDemandAuthorization = async () => {
         const authLink = onDemandAuthorization.body._links;
         return authLink;
     } catch (err) {
-        console.error("Creating an On Demand Authorization Failed: ", err);
+        console.error("Error al crear una autorización a pedido: ", err);
     }
 };
 
@@ -59,7 +59,7 @@ export const createDwollaCustomer = async (
             .post("customers", newCustomer)
             .then((res) => res.headers.get("location"));
     } catch (err) {
-        console.error("Creating a Dwolla Customer Failed: ", err);
+        console.error("Error al crear un cliente de Dwolla: ", err);
     }
 };
 
@@ -87,7 +87,7 @@ export const createTransfer = async ({
             .post("transfers", requestBody)
             .then((res) => res.headers.get("location"));
     } catch (err) {
-        console.error("Transfer fund failed: ", err);
+        console.error("La transferencia falló:", err);
     }
 };
 
@@ -108,6 +108,6 @@ export const addFundingSource = async ({
         };
         return await createFundingSource(fundingSourceOptions);
     } catch (err) {
-        console.error("Transfer fund failed: ", err);
+        console.error("La transferencia falló: ", err);
     }
 };

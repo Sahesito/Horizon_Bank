@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import { formUrlQuery } from "@/lib/utils";
 
@@ -38,7 +37,7 @@ export const Pagination = ({ page, totalPages }: PaginationProps) => {
                     height={20}
                     className="mr-2"
                 />
-                Prev
+                Anterior
             </Button>
             <p className="text-14 flex items-center px-2">
                 {page} / {totalPages}
@@ -50,7 +49,7 @@ export const Pagination = ({ page, totalPages }: PaginationProps) => {
                 onClick={() => handleNavigation("next")}
                 disabled={Number(page) >= totalPages}
             >
-                Next
+                Siguiente
                 <Image
                     src="/icons/arrow-left.svg"
                     alt="arrow"
